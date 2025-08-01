@@ -62,4 +62,15 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     }
+    .nav-bar-lista{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+    }
+    .lista-links {
+    background-color: aquamarine;
+    padding: .5rem .5rem;
+    border-radius: .3rem;
+}
 }
