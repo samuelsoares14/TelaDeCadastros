@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/reset.css">
+
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title-principal">Sistema de loja</h1>
+        <nav class="nav-bar">
+            <ul class="nav-bar-lista">
+                <li class="lista-links">
+                    <a class="link" href="#">Tela de Cadastro de Produtos</a>
+                </li>
+                <li class="lista-links">
+                    <a class="link" href="#">Tela de lista de Produtos</a>
+                </li>
+                <li class="lista-links">
+                    <a class="link" href="#">Tela de Venda de Produtos</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="formularios">
+            <form class="formulario-novo-produto hidden" id="formulario-novo-produto">
+                <h2 class="tile-tela-Cadastro-produto">Cadastro de Produtos</h2>
+                <div class="form-lado-a-lado">
+                    <div class="container-upload-imagem">
+                        <img src="imagem/produto.png" alt="Pré-visualização" id="preview-imagem">
+                        <button type="button" id="upload-btn" class="botoes btn-carregar-imagem"> Carregar Imagem</button>
+                        <input type="file" id="imagem-upload" accept="imagem/*" hidden>
+                        <p id="nome-imagem">Nunhuma Imgame Selecionada</p>
+                    </div>
+                    <div class="container-campos">
+                        <div class="container-input">
+                            <label class="label" for="nome">Nome:</label>
+                            <input class="input" type="text" id="nome" placeholder="Ex: Sabão">
+                        </div>
+                        <div class="container-input">
+                            <label class="label" for="codigo">Codigo:</label>
+                            <input class="input" type="number" id="codigo" placeholder="Ex: 12345">
+                        </div>
+                        <div class="container-input">
+                            <label class="label" for="quantidade">Quantidade:</label>
+                            <input class="input" type="number" id="quantidade" placeholder="Ex: 12">
+                        </div>
+                        <div class="container-input">
+                            <label class="label" for="valor">Valor:</label>
+                            <input class="input" type="number" id="valor" placeholder="Ex: 6,99">
+                        </div>
+                        <div class="container-input">
+                            <label class="label" for="categoria">Categoria:</label>
+                            <select class="input" id="categoria">
+                                <option class="input" value="">Selecione uma categoria</option>
+                            </select>
+                            <button class="botoes btnNovaCategoria" type="button" id="btn-nova-categoria">+ Nova Categoria</button>
+                        </div>
+                        <div id="form-nova-categoria" class="form-nova-categoria hidden">
+                            <input class="input" type="text" id="nova-categoira" placeholder="Digite a Nova Categoira">
+                            <button class="botoes adicionar" type="button" id="btn-salvar-nova-categoria">Adcionar</button>
+                        </div>
+                        <div class="container-botoes">
+                            <button class="botoes cancelar" type="button" id="btn-cancelar-produtos">Cancalar</button>
+                            <button class="botoes salvar" type="button" id="btn-salvar-produtos">Salvar Produto</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>

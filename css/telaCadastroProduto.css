@@ -1,0 +1,148 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.formulario-novo-produto {
+    margin: 0rem 2rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tile-tela-Cadastro-produto {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.form-lado-a-lado {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+/* juste da parte da imagem */
+.container-upload-imagem {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-carregar-imagem {
+    margin: 0 8rem;
+    padding: .5rem;
+    border-radius: 10px;
+    background-color: aquamarine;
+    border: 1px solid;
+}
+
+.btn-carregar-imagem:hover {
+    background-color: #6dddb8;
+}
+
+#preview-imagem {
+    width: 420px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ajuste da parte dos formularios*/
+
+.container-campos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    border: #333 1px solid;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+}
+
+.container-input {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: 550;
+    color: var(--cor-texto);
+    font-size: 1rem;
+}
+
+.input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btnNovaCategoria {
+    padding: .5rem;
+    background-color: #6dddb8;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.container-botoes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.form-nova-categoria {
+    display: flex;
+    gap: 1rem;
+}
+
+.adicionar {
+    background-color: #6dddb8;
+}
+
+.botoes {
+    padding: .6rem 2rem;
+    border-radius: .5rem;
+    border: 1px solid;
+    font-size: 1rem;
+}
+
+.cancelar {
+    background-color: var(--cor-vermelho);
+}
+
+.salvar {
+    background-color: var(--cor-verde);
+}
+
+.hiddenn {
+    display: none;
+}
+
+@media (max-width: 480px) {
+  .formulario-novo-produto {
+    margin: .5rem .5rem;
+    padding: .5rem .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    }
+  .form-lado-a-lado {
+    flex-direction: column;
+  }
+  #preview-imagem {
+    width: 100%;
+  }
+  .botoes {
+    margin: 0 auto;
+  }
+  .container-campos {
+    padding: .1rem;
+  }
+}
