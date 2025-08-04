@@ -1,0 +1,111 @@
+.formularios-lista-produto {
+    display: flex;
+    margin: 1rem;
+}
+
+.card-itens {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Quebra linha quando necessário*/
+    gap: 1rem;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform-origin: center;
+}
+
+.card-item:hover {
+    transform: scale(1.05); /* Cresce o card*/
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa*/
+}
+
+.imagem-item {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    flex-grow: 1;
+    border-radius: 5px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    margin-top: auto; /* Empurra o nome para o final */
+    text-align: center;
+}
+
+.nome-produto {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.preco-item{
+    font-size: 1.1rem;
+    display: flex;
+    gap: .5rem;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .formularios-lista-produto {
+        display: flex;
+    }
+    .card-itens {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .card-item {
+    display: flex;
+    flex-direction: row; /* imagem de um lado, texto do outro */
+    align-items: center; /* centraliza verticalmente */
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    gap: 1rem;
+}
+    .imagem-item {
+    max-width: 40%; /* reduz o tamanho da imagem */
+    height: auto;
+
+    }
+    .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza verticalmente o conteúdo */
+    align-items: center;     /* centraliza horizontalmente o conteúdo */
+    text-align: center;
+    gap: 0.3rem;
+}
+    .nome-produto {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+    }
+    .preco-produto {
+        font-weight: bold;
+        margin-top: 0.5rem;
+        color: #4caf50;
+    }
+}

@@ -1,4 +1,5 @@
-@import url(telaCadastroProduto.css);
+@import url(css/telaCadastroProduto.css);
+@import url(css/listaPordutos.css);
 :root {
     --cor-vermelho: #ff746c;
     --cor-verde: #a9eca2;
@@ -46,6 +47,10 @@ body {
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
+}
+
+.hidden {
+    display: none;
 }
 
 @media (max-width: 480px) {

@@ -15,27 +15,24 @@
         <nav class="nav-bar">
             <ul class="nav-bar-lista">
                 <li class="lista-links">
-                    <a class="link" href="#">Tela de Cadastro de Produtos</a>
+                    <a class="link" id="btn-tela-cadastro-produtos" href="#">Cadastro de Produtos</a>
                 </li>
                 <li class="lista-links">
-                    <a class="link" href="#">Tela de lista de Produtos</a>
-                </li>
-                <li class="lista-links">
-                    <a class="link" href="#">Tela de Venda de Produtos</a>
+                    <a class="link" id="btn-lista-produtos" href="#">lista de Produtos</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="formularios">
-            <form class="formulario-novo-produto hidden" id="formulario-novo-produto">
+            <form class="formulario-novo-produto" id="formulario-novo-produto">
                 <h2 class="tile-tela-Cadastro-produto">Cadastro de Produtos</h2>
                 <div class="form-lado-a-lado">
                     <div class="container-upload-imagem">
                         <img src="produto.png" alt="Pré-visualização" id="preview-imagem">
-                        <button type="button" id="upload-btn" class="botoes btn-carregar-imagem"> Carregar Imagem</button>
-                        <input type="file" id="imagem-upload" accept="imagem/*" hidden>
-                        <p id="nome-imagem">Nunhuma Imgame Selecionada</p>
+                        <button type="button" id="upload-btn" class="botoes btn-carregar-imagem">Carregar Imagem</button>
+                        <input type="file" id="imagem-upload" accept="image/*" hidden>
+                        <p id="nome-imagem">Nenhuma imagem selecionada</p>
                     </div>
                     <div class="container-campos">
                         <div class="container-input">
@@ -51,7 +48,7 @@
                             <input class="input" type="number" id="quantidade" placeholder="Ex: 12">
                         </div>
                         <div class="container-input">
-                            <label class="label" for="valor">Valor:</label>
+                            <label class="label" for="valor">Preço:</label>
                             <input class="input" type="number" id="valor" placeholder="Ex: 6,99">
                         </div>
                         <div class="container-input">
@@ -62,18 +59,95 @@
                             <button class="botoes btnNovaCategoria" type="button" id="btn-nova-categoria">+ Nova Categoria</button>
                         </div>
                         <div id="form-nova-categoria" class="form-nova-categoria hidden">
-                            <input class="input" type="text" id="nova-categoira" placeholder="Digite a Nova Categoira">
+                            <input class="input" type="text" id="nova-categoria" placeholder="Digite a Nova Categoira">
                             <button class="botoes adicionar" type="button" id="btn-salvar-nova-categoria">Adcionar</button>
                         </div>
                         <div class="container-botoes">
                             <button class="botoes cancelar" type="button" id="btn-cancelar-produtos">Cancalar</button>
-                            <button class="botoes salvar" type="button" id="btn-salvar-produtos">Salvar Produto</button>
+                            <button type="submit" id="btn-salvar-produtos" class="botoes salvar">Salvar Produto</button>
                         </div>
                     </div>
                 </div>
             </form>
+            <div class="formularios-lista-produto hidden" id="form-listaProdutos">
+                <ul class="card-itens">
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/sabão-líquido-omo.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Sabão Líquido</h2>
+                            <p><strong>Código:</strong> 12345</p>
+                            <p><strong>Categoria:</strong> Limpeza</p>
+                            <p><strong>Quantidade:</strong> 10</p>
+                            <p class="preco-produto">R$ 39,99</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/sabão-líquido-omo.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Sabão Líquido</h2>
+                            <p class="preco-produto">R$ 39,99</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/bananas.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Banana</h2>
+                            <p class="preco-produto">R$ 6,90</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/sabão-líquido-omo.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Sabão Líquido</h2>
+                            <p class="preco-produto">R$ 39,99</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/bananas.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Banana</h2>
+                            <p class="preco-produto">R$ 6,90</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/sabão-líquido-omo.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Sabão Líquido</h2>
+                            <p class="preco-produto">R$ 39,99</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/sabão-líquido-omo.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Sabão Líquido</h2>
+                            <p class="preco-produto">R$ 39,99</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/bananas.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Banana</h2>
+                            <p class="preco-produto">R$ 6,90</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/sabão-líquido-omo.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Sabão Líquido</h2>
+                            <p class="preco-produto">R$ 39,99</p>
+                        </div>
+                    </li>
+                    <li class="card-item">
+                        <img class="imagem-item" src="imagem/bananas.jpg" alt="">
+                        <div class="text">
+                            <h2 class="nome-produto">Banana</h2>
+                            <p class="preco-produto">R$ 6,90</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>  
         </div>
     </main>
-    <script src="/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
