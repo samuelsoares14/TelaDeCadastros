@@ -12,7 +12,7 @@ const nomeImagem = document.getElementById('nome-imagem');
 
 const nomeProduto = document.getElementById('nome');
 const codigoProduto = document.getElementById('codigo');
-const quantproduto = document.getElementById('quantidade');
+const quantidadeProduto = document.getElementById('quantidade');
 const precoProduto = document.getElementById('valor');
 
 const selectCategoria = document.getElementById('categoria');
@@ -154,7 +154,7 @@ formCadastroProduto.addEventListener('submit', (e) => {
 
   const nome = nomeProduto.value.trim();
   const codigo = codigoProduto.value.trim();
-  const quantidade = quantproduto.value.trim();
+  const quantidade = quantidadeProduto.value.trim();
   const valor = parseFloat(precoProduto.value.trim()).toFixed(2);
   const categoria = selectCategoria.value;
   const imagem = previewImagem.src;
@@ -214,7 +214,7 @@ function editarProduto(codigo) {
   // Preenche o formulário com os dados do produto
   nomeProduto.value = produto.nome;
   codigoProduto.value = produto.codigo;
-  quantproduto.value = produto.quantidade;
+  quantidadeProduto.value = produto.quantidade;
   precoProduto.value = produto.valor;
   selectCategoria.value = produto.categoria;
   previewImagem.src = produto.imagem;

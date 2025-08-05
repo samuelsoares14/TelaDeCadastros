@@ -1,5 +1,5 @@
-@import url(css/telaCadastroProduto.css);
-@import url(css/listaPordutos.css);
+@import url(telaCadastroProduto.css);
+@import url(listaProdutos.css);
 :root {
   --cor-primaria: #4A90E2;
   --cor-primaria-hover: #357ABD;

@@ -12,7 +12,6 @@
     gap: 1rem;
 }
 
-
 .card-item {
     display: flex;
     align-items: center;
@@ -20,7 +19,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 200px;
-    height: auto;
+    height: 390px;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
@@ -34,11 +33,11 @@
 
 .card-item:hover {
     transform: scale(1.05); /* Cresce o card*/
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra mais intensa*/
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .imagem-item {
-    max-width: 80%;
+    max-width: 60%;
     height: auto;
     object-fit: contain;
     flex-grow: 1;
@@ -50,7 +49,7 @@
     flex-direction: column;
     gap: .5rem;
     align-items: center;
-    margin-top: auto; /* Empurra o nome para o final */
+    margin-top: auto;
     text-align: center;
 }
 
@@ -67,13 +66,9 @@
     font-weight: 500;
 }
 
-
 .card-item {
     position: relative;
 }
-
-
-/* Removido position absolute para manter os ícones no fluxo normal abaixo do valor */
 
 .card-item.show-actions .card-actions {
     display: flex;
@@ -116,7 +111,6 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-    
     }
     .card-item{
         display: flex;

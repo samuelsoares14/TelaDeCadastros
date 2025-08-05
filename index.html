@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/reset.css">
 
     <title>Cadastro de Produtos</title>
 </head>
 <body>
     <header class="header">
-        <h1 class="title-principal">Sistema de loja</h1>
+        <h1 class="title-principal">Sistema da Loja</h1>
         <nav class="nav-bar">
             <ul class="nav-bar-lista">
                 <li class="lista-links">
                     <a class="link" id="btn-tela-cadastro-produtos" href="#">Cadastro de Produtos</a>
                 </li>
                 <li class="lista-links">
-                    <a class="link" id="btn-lista-produtos" href="#">lista de Produtos</a>
+                    <a class="link" id="btn-lista-produtos" href="#">Lista de Produtos</a>
                 </li>
             </ul>
         </nav>
@@ -26,10 +26,10 @@
     <main>
         <div class="formularios">
             <form class="formulario-novo-produto" id="formulario-novo-produto">
-                <h2 class="tile-tela-Cadastro-produto">Cadastro de Produtos</h2>
+                <h2 class="title-tela-cadastro-produto">Cadastro de Produtos</h2>
                 <div class="form-lado-a-lado">
                     <div class="container-upload-imagem">
-                        <img src="produto.png" alt="Pré-visualização" id="preview-imagem">
+                        <img src="imagem/produto.png" alt="Pré-visualização" id="preview-imagem">
                         <button type="button" id="upload-btn" class="botoes btn-carregar-imagem">Carregar Imagem</button>
                         <input type="file" id="imagem-upload" accept="image/*" hidden>
                         <p id="nome-imagem">Nenhuma imagem selecionada</p>
@@ -37,32 +37,32 @@
                     <div class="container-campos">
                         <div class="container-input">
                             <label class="label" for="nome">Nome:</label>
-                            <input class="input" type="text" id="nome" placeholder="Ex: Sabão">
+                            <input class="input" type="text" id="nome" placeholder="Exemplo: Sabão">
                         </div>
                         <div class="container-input">
-                            <label class="label" for="codigo">Codigo:</label>
-                            <input class="input" type="number" id="codigo" placeholder="Ex: 12345">
+                            <label class="label" for="codigo">Código:</label>
+                            <input class="input" type="number" id="codigo" placeholder="Exemplo: 12345">
                         </div>
                         <div class="container-input">
                             <label class="label" for="quantidade">Quantidade:</label>
-                            <input class="input" type="number" id="quantidade" placeholder="Ex: 12">
+                            <input class="input" type="number" id="quantidade" placeholder="Exemplo: 12">
                         </div>
                         <div class="container-input">
                             <label class="label" for="valor">Preço:</label>
-                            <input class="input" type="number" step="0.01" min="0"  id="valor" placeholder="Ex: 6,99">
+                            <input class="input" type="number" step="0.01" min="0"  id="valor" placeholder="Exemplo: 6,99">
                         </div>
                         <div class="formNovaCategoria">
                             <div class="novaCategoria">
                                 <label class="label" for="categoria">Categoria:</label>
                                 <select class="input" id="categoria">
-                                    <option class="input" value="">Selecione uma categoria</option>
+                                    <option class="input" value="">Selecione uma Categoria</option>
                                 </select>
                             </div>
                             <button class="botoes btnNovaCategoria" type="button" id="btn-nova-categoria">+ Nova Categoria</button>
                         </div>
                         <div id="form-nova-categoria" class="form-nova-categoria hidden">
-                            <input class="input" type="text" id="nova-categoria" placeholder="Digite a Nova Categoira">
-                            <button class="botoes adicionar" type="button" id="btn-salvar-nova-categoria">Adcionar</button>
+                            <input class="input" type="text" id="nova-categoria" placeholder="Digite a nova categoria">
+                            <button class="botoes adicionar" type="button" id="btn-salvar-nova-categoria">Adicionar</button>
                         </div>
                         <div class="container-botoes">
                             <button class="botoes cancelar-edicao hidden" type="button" id="btn-cancelar-edicao">Cancelar Edição</button>
