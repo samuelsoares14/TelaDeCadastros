@@ -49,13 +49,15 @@
                         </div>
                         <div class="container-input">
                             <label class="label" for="valor">Preço:</label>
-                            <input class="input" type="number" id="valor" placeholder="Ex: 6,99">
+                            <input class="input" type="number" step="0.01" min="0"  id="valor" placeholder="Ex: 6,99">
                         </div>
-                        <div class="container-input">
-                            <label class="label" for="categoria">Categoria:</label>
-                            <select class="input" id="categoria">
-                                <option class="input" value="">Selecione uma categoria</option>
-                            </select>
+                        <div class="formNovaCategoria">
+                            <div class="novaCategoria">
+                                <label class="label" for="categoria">Categoria:</label>
+                                <select class="input" id="categoria">
+                                    <option class="input" value="">Selecione uma categoria</option>
+                                </select>
+                            </div>
                             <button class="botoes btnNovaCategoria" type="button" id="btn-nova-categoria">+ Nova Categoria</button>
                         </div>
                         <div id="form-nova-categoria" class="form-nova-categoria hidden">
@@ -63,7 +65,8 @@
                             <button class="botoes adicionar" type="button" id="btn-salvar-nova-categoria">Adcionar</button>
                         </div>
                         <div class="container-botoes">
-                            <button class="botoes cancelar" type="button" id="btn-cancelar-produtos">Cancalar</button>
+                            <button class="botoes cancelar-edicao hidden" type="button" id="btn-cancelar-edicao">Cancelar Edição</button>
+                            <button class="botoes cancelar" type="button" id="btn-cancelar-produtos">Cancelar</button>
                             <button type="submit" id="btn-salvar-produtos" class="botoes salvar">Salvar Produto</button>
                         </div>
                     </div>

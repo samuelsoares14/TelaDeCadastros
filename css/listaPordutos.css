@@ -12,6 +12,7 @@
     gap: 1rem;
 }
 
+
 .card-item {
     display: flex;
     align-items: center;
@@ -28,6 +29,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transform-origin: center;
+    position: relative;
 }
 
 .card-item:hover {
@@ -65,6 +67,46 @@
     font-weight: 500;
 }
 
+
+.card-item {
+    position: relative;
+}
+
+
+/* Removido position absolute para manter os ícones no fluxo normal abaixo do valor */
+
+.card-item.show-actions .card-actions {
+    display: flex;
+}
+
+.card-actions {
+  display: none;
+  gap: 0.1rem;
+  margin-top: 0.7rem;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 0.1rem 0.2rem;
+  border: 1px solid #eee;
+  align-items: center;
+}
+
+.btn-excluir,
+.btn-editar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: red;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: transform 0.2s;
+}
+
+.btn-excluir:hover {
+  transform: scale(1.2);
+}
+
 @media (max-width: 480px) {
     .formularios-lista-produto {
         display: flex;
@@ -74,36 +116,32 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+    
     }
-    .card-item {
-    display: flex;
-    flex-direction: row; /* imagem de um lado, texto do outro */
-    align-items: center; /* centraliza verticalmente */
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    gap: 1rem;
-}
+    .card-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 265px;
+    }
     .imagem-item {
-    max-width: 40%; /* reduz o tamanho da imagem */
-    height: auto;
-
+        width: 100px;
+        height: auto;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
     }
     .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* centraliza verticalmente o conteúdo */
-    align-items: center;     /* centraliza horizontalmente o conteúdo */
-    text-align: center;
-    gap: 0.3rem;
-}
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
     .nome-produto {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 0.3rem;
     }
     .preco-produto {
+        font-size: 1rem;
         font-weight: bold;
         margin-top: 0.5rem;
         color: #4caf50;

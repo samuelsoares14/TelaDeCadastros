@@ -20,6 +20,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form-lado-a-lado {
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
     gap: 1rem;
@@ -35,26 +36,33 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn-carregar-imagem {
-    margin: 0 8rem;
-    padding: .5rem;
-    border-radius: 10px;
-    background-color: aquamarine;
-    border: 1px solid;
+  background-color: #51AFDB;
+  box-shadow: 2px 2px 2px #4698BE, -2px -2px 2px #00000026;
 }
 
-.btn-carregar-imagem:hover {
-    background-color: #6dddb8;
+.btn-carregar-imagem:hover{
+  box-shadow: -1px 0px 8px #4698BE, 6px 6px 10px #00000026;
 }
 
 #preview-imagem {
-    width: 300px;
+    width: 325px;
     height: auto;
     border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+#preview-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ajuste da parte dos formularios*/
 
 .container-campos {
+    width: 500px;
+    height: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -71,6 +79,18 @@ input[type=number]::-webkit-outer-spin-button {
     gap: 0.5rem;
 }
 
+.formNovaCategoria {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.novaCategoria{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
 .label {
     font-weight: 550;
     color: var(--cor-texto);
@@ -78,24 +98,33 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .input {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 1rem;
 }
 
-.btnNovaCategoria {
-    padding: .5rem;
-    background-color: #6dddb8;
-    border-radius: 10px;
-    border: 1px solid;
+.input:focus {
+  outline: none;
+  border: none;
+}
+
+.btnNovaCategoria,
+.adicionar {
+  background-color: #6dddb8;
+  box-shadow: 2px 2px 2px #5EC1A0, -2px -2px 2px #00000026;
+}
+
+.btnNovaCategoria:hover,
+.adicionar:hover {
+  box-shadow: -1px 0px 8px #6dddb8, 6px 6px 10px #00000026;
 }
 
 .container-botoes {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .form-nova-categoria {
@@ -103,23 +132,32 @@ input[type=number]::-webkit-outer-spin-button {
     gap: 1rem;
 }
 
-.adicionar {
-    background-color: #6dddb8;
-}
-
 .botoes {
-    padding: .6rem 2rem;
-    border-radius: .5rem;
-    border: 1px solid;
-    font-size: 1rem;
+  color: var(--cor-texto);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .3s ease;
 }
 
 .cancelar {
-    background-color: var(--cor-vermelho);
+  background-color: var(--cor-vermelho);
+  box-shadow: 2px 2px 2px #CB4435, -2px -2px 2px #00000026;
+}
+
+.cancelar:hover{
+  box-shadow: -1px 0px 8px #CB4435, 6px 6px 10px #00000026;
 }
 
 .salvar {
-    background-color: var(--cor-verde);
+  background-color: var(--cor-verde);
+  box-shadow: 2px 2px 2px #26AF5F, -2px -2px 2px #00000026;
+}
+
+.salvar:hover{
+  box-shadow: -1px 0px 8px #26AF5F, 6px 6px 10px #00000026;
 }
 
 .hiddenn {
@@ -127,24 +165,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 480px) {
-  .formulario-novo-produto {
-    margin: .5rem .5rem;
-    padding: .5rem .5rem;
+  body {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    }
+    justify-content: center;
+  }
   .form-lado-a-lado {
+    display: flex;
     flex-direction: column;
   }
-  #preview-imagem {
-    width: 100%;
-  }
-  .botoes {
-    margin: 0 auto;
-  }
-  .container-campos {
-    padding: .1rem;
+  .container-campos{
+    width: 370px;
   }
 }

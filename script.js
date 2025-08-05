@@ -101,6 +101,7 @@ function renderizarProdutos() {
     const li = document.createElement('li');
     li.classList.add('card-item');
 
+
     li.innerHTML = `
       <img class="imagem-item" src="${produto.imagem}" alt="${produto.nome}">
       <div class="text">
@@ -109,12 +110,43 @@ function renderizarProdutos() {
         <p><strong>Categoria:</strong> ${produto.categoria}</p>
         <p><strong>Quantidade:</strong> ${produto.quantidade}</p>
         <p class="preco-produto">R$ ${parseFloat(produto.valor).toFixed(2)}</p>
+        <div class="card-actions">
+          <button class="btn-editar" data-codigo="${produto.codigo}" title="Editar produto">✏️</button>
+          <button class="btn-excluir" data-codigo="${produto.codigo}" title="Excluir produto">🗑️</button>
+        </div>
       </div>
     `;
+
+    // Evento para mostrar/ocultar ações ao clicar no card (exceto nos botões)
+    li.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('btn-editar') && !e.target.classList.contains('btn-excluir')) {
+        li.classList.toggle('show-actions');
+      }
+    });
+
+    // Evento para excluir produto
+    li.querySelector('.btn-excluir').addEventListener('click', (e) => {
+      const codigo = e.target.getAttribute('data-codigo');
+      excluirProduto(codigo);
+    });
+
+    // Evento para editar produto
+    li.querySelector('.btn-editar').addEventListener('click', (e) => {
+      const codigo = e.target.getAttribute('data-codigo');
+      editarProduto(codigo);
+    });
 
     lista.appendChild(li);
   });
 }
+
+function excluirProduto(codigo) {
+  let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  produtos = produtos.filter(p => p.codigo !== codigo);
+  localStorage.setItem('produtos', JSON.stringify(produtos));
+  renderizarProdutos();
+}
+
 
 // Submit do formulário de cadastro
 formCadastroProduto.addEventListener('submit', (e) => {
@@ -123,37 +155,95 @@ formCadastroProduto.addEventListener('submit', (e) => {
   const nome = nomeProduto.value.trim();
   const codigo = codigoProduto.value.trim();
   const quantidade = quantproduto.value.trim();
-  const valor = precoProduto.value.trim();
+  const valor = parseFloat(precoProduto.value.trim()).toFixed(2);
   const categoria = selectCategoria.value;
-  const imagem = previewImagem.src; // pega a URL da imagem exibida no preview
+  const imagem = previewImagem.src;
 
   if (!nome || !codigo || !quantidade || !valor || !categoria) {
     alert('Preencha todos os campos!');
     return;
   }
 
-  const produto = {
-    nome,
-    codigo,
-    quantidade,
-    valor,
-    categoria,
-    imagem
-  };
+  let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
 
-  salvarProduto(produto);
+  const editando = e.submitter.dataset.editando;
+
+  if (editando) {
+    // Atualiza produto existente
+    produtos = produtos.map(p => {
+      if (p.codigo === editando) {
+        return { nome, codigo, quantidade, valor, categoria, imagem };
+      }
+      return p;
+    });
+    e.submitter.textContent = 'Salvar Produto';
+    delete e.submitter.dataset.editando;
+    alert('Produto atualizado com sucesso!');
+  } else {
+    // Salva novo produto
+    const produto = { nome, codigo, quantidade, valor, categoria, imagem };
+    produtos.push(produto);
+    alert('Produto salvo com sucesso!');
+  }
+
+  localStorage.setItem('produtos', JSON.stringify(produtos));
   renderizarProdutos();
 
   formCadastroProduto.reset();
   previewImagem.src = 'produto.png';
   nomeImagem.textContent = 'Nenhuma imagem selecionada';
   selectCategoria.value = '';
-
-  alert('Produto salvo com sucesso!');
 });
+
 
 
 // Carregar categorias ao iniciar página
 window.addEventListener('DOMContentLoaded', () => {
   atualizarSelectCategorias();
 });
+
+
+// Editar Produto
+
+function editarProduto(codigo) {
+  const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+  const produto = produtos.find(p => p.codigo === codigo);
+
+  if (!produto) return;
+
+  // Preenche o formulário com os dados do produto
+  nomeProduto.value = produto.nome;
+  codigoProduto.value = produto.codigo;
+  quantproduto.value = produto.quantidade;
+  precoProduto.value = produto.valor;
+  selectCategoria.value = produto.categoria;
+  previewImagem.src = produto.imagem;
+  nomeImagem.textContent = 'Imagem carregada';
+
+  // Mostra a tela de cadastro e esconde a lista
+  formCadastroProduto.classList.remove('hidden');
+  telaListaProdutos.classList.add('hidden');
+
+  // Troca o botão para "Atualizar"
+  const btnSalvar = document.getElementById('btn-salvar-produtos');
+  btnSalvar.textContent = 'Atualizar Produto';
+  btnSalvar.dataset.editando = codigo;
+  btnCancelarEdicao.classList.remove('hidden');
+}
+
+const btnCancelarEdicao = document.getElementById('btn-cancelar-edicao');
+
+btnCancelarEdicao.addEventListener('click', () => {
+  formCadastroProduto.reset();
+  previewImagem.src = 'produto.png';
+  nomeImagem.textContent = 'Nenhuma imagem selecionada';
+  selectCategoria.value = '';
+
+  const btnSalvar = document.getElementById('btn-salvar-produtos');
+  btnSalvar.textContent = 'Salvar Produto';
+  delete btnSalvar.dataset.editando;
+
+  btnCancelarEdicao.classList.add('hidden');
+});
+
+btnCancelarEdicao.classList.add('hidden');
